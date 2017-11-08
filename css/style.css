@@ -1,19 +1,23 @@
+@font-face {
+    font-family: EqualSans;
+    src: url('../fonts/equalsans_demo.ttf');
+}
+
 /* ------------ globais ------------ */
 body {
     margin: 0;
-    font-family: 'Roboto', sans-serif;
-}
-
-.logotipo {
-    width: 80px;
 }
 
 main, header {
     padding: 8px;
 }
 
-/* ------------ menu principal ------------ */
+h1, h2, h3, h4, h5, h6, .menu, .titulo, .meu-trabalho,
+.trabalho__titulo, .conhecimentos__titulo {
+    font-family: EqualSans, sans-serif;
+}
 
+/* ------------ menu principal ------------ */
 .menu ul, .menu ul li  {
     display: inline-block;
 }
@@ -21,6 +25,7 @@ main, header {
 .menu ul {
     width: 100%;
     padding: 6px 0 6px 0;
+    font-size: 1.2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.5);
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
@@ -30,7 +35,7 @@ main, header {
     text-transform: uppercase;
 }
 
-.menu ul li:first-child {
+.menu ul li:first-child a {
     color: orangered;
 }
 
@@ -40,6 +45,11 @@ main, header {
 }
 
 /* ------------ header ------------ */
+.logotipo {
+    width: 35%;
+    filter: invert(100%);
+}
+
 header {
     padding: 32px 8px;
     background-image: url('../img/using-notebook.png');
@@ -47,6 +57,7 @@ header {
     background-position: right;
     background-size: cover;
     box-shadow: inset 0px -25px 100px 5px rgba(0, 0, 0, 0.75);
+    box-sizing: border-box;
 }
 
 .titulo, .descricao, .meu-trabalho {
@@ -54,10 +65,11 @@ header {
 }
 
 .titulo {
-    font-size: 1.7rem;
+    font-size: 2rem;
     text-transform: uppercase;
-    letter-spacing: -1px;
-    font-weight: 300;
+    letter-spacing: 1px;
+    font-weight: 200;
+    text-shadow: 2px 2px black;
 }
 
 .descricao {
@@ -65,9 +77,148 @@ header {
 }
 
 .meu-trabalho {
-    padding: 4px 12px;
+    padding: 8px 25px;
     background: orangered;
     text-decoration: none;
     text-transform: uppercase;
     border-radius: 12px;
+    font-size: 1.5rem;
+    margin: 16px 0 16px 0;
+}
+
+/* ------------ main ------------ */
+main {
+    background-color: #f4f8f9;
+}
+
+/* ------------ artigo trabalho ------------ */
+.trabalho {
+    
+}
+
+.hifen {
+    width: 20px;
+    height: 5px;
+    background-color: orangered;
+}
+
+.trabalho__titulo {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+}
+
+.trabalho__imagem {
+    display: block;
+    margin: 0 auto;
+}
+
+/* ------------ section portfolio ------------ */
+.portfolio {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+/* ------------ article conhecimentos ------------ */
+.conhecimentos {
+    margin: 1rem 0;
+}
+
+.conhecimentos__titulo {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+}
+
+.conhecimentos__frase {
+    font-family: "Times New Roman";
+}
+
+/* ------------ graficos ------------ */
+.graficos img {
+    width: 100%;
+}
+
+@media screen and (min-width: 740px)
+{
+    main, header {
+        padding: 16px;
+    }
+
+    header {
+        padding-bottom: 50px;
+    }
+
+    /* ------------ header ------------ */
+    .logotipo {
+        width: 20%;
+    }
+
+    .menu ul {
+        font-size: 1.5rem;
+    }
+
+    .titulo {
+        margin: 0;
+        font-size: 3rem;
+    }
+
+    .descricao {
+        font-size: 1.5rem;
+    }
+
+    .meu-trabalho {
+        letter-spacing: 3px;
+    }
+}
+
+@media screen and (min-width: 1024px)
+{
+    header, main {
+        padding: 2rem 8rem 8rem 8rem;
+    }
+
+    .menu {
+        display: table;
+        width: 100%;
+    }
+
+    .logotipo {
+        width: 60%;
+    }
+
+    .menu ul {
+        display: table-cell;
+        vertical-align: middle;
+        width: 80%;
+        border: none;
+    }
+
+    .menu ul li {
+        margin: 0 1.5rem;
+    }
+
+    .trabalho {
+        display: inline-block;
+        width: calc(100% / 3);
+        margin-right: -4px;
+        padding-bottom: 3rem;
+    }
+
+    .trabalho__conteudo {
+        width: 80%;
+    }
+
+    .experiencia {
+        padding-top: 3rem;
+    }
+
+    .conhecimentos {
+        width: 60%;
+        display: inline-block;
+        margin-right: -4px;
+    }
+
+    .graficos {
+        width: 40%;
+        display: inline-block;
+        margin-right: -4px;
+    }
 }
