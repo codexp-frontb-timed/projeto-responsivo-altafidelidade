@@ -6,14 +6,14 @@
 /* ------------ globais ------------ */
 body {
     margin: 0;
+    font-family: sans-serif;
 }
 
 main, header {
     padding: 8px;
 }
 
-h1, h2, h3, h4, h5, h6, .menu, .titulo, .meu-trabalho,
-.trabalho__titulo, .conhecimentos__titulo {
+h1, h2, h3, h4, h5, h6, .menu, .titulo, .meu-trabalho, .trabalho__titulo, .conhecimentos__titulo {
     font-family: EqualSans, sans-serif;
 }
 
@@ -35,7 +35,7 @@ h1, h2, h3, h4, h5, h6, .menu, .titulo, .meu-trabalho,
     text-transform: uppercase;
 }
 
-.menu ul li:first-child a {
+.menu ul li a:active {
     color: orangered;
 }
 
@@ -56,6 +56,7 @@ header {
     background-repeat: no-repeat;
     background-position: right;
     background-size: cover;
+    background-attachment: fixed;
     box-shadow: inset 0px -25px 100px 5px rgba(0, 0, 0, 0.75);
     box-sizing: border-box;
 }
@@ -128,13 +129,39 @@ main {
 }
 
 .conhecimentos__frase {
+    font-size: 1.2rem;
     font-family: "Times New Roman";
 }
 
 /* ------------ graficos ------------ */
-.graficos img {
+.graficos {
     width: 100%;
 }
+
+.graficos__barra {
+    width: 90%;
+    margin: 1rem auto;
+    border-radius: 30px;    
+}
+
+.graficos__barra[value]::-webkit-progress-bar {
+    background-color: #ccc;
+    border-radius: 40px;
+}
+
+.graficos__barra[value]::-webkit-progress-value {
+    background-color: orangered;
+    border-radius: 40px;
+}
+
+.graficos__texto {
+    position: absolute;
+    left: 12px;
+    margin-top: 16px;
+    color: white;
+}
+
+/* ------------ media query tablet ------------ */
 
 @media screen and (min-width: 740px)
 {
@@ -142,11 +169,11 @@ main {
         padding: 16px;
     }
 
+    /* ------------ header ------------ */
     header {
         padding-bottom: 50px;
     }
-
-    /* ------------ header ------------ */
+    
     .logotipo {
         width: 20%;
     }
@@ -169,12 +196,15 @@ main {
     }
 }
 
+/* ------------ media query desktop ------------ */
+
 @media screen and (min-width: 1024px)
 {
     header, main {
         padding: 2rem 8rem 8rem 8rem;
     }
 
+    /* ------------ menu principal ------------ */
     .menu {
         display: table;
         width: 100%;
@@ -219,7 +249,9 @@ main {
 
     .graficos {
         width: 40%;
+        height: 100%;
         display: inline-block;
-        margin-right: -4px;
+        position: relative;
+        margin: 3rem -4px 0 0;
     }
 }
